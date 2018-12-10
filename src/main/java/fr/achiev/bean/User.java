@@ -12,6 +12,8 @@ public class User implements java.io.Serializable
     
     private java.lang.String Username;
     
+    private java.lang.String Password;
+    
     private java.lang.String BattleTag;
     
     private java.lang.String Server;
@@ -81,6 +83,14 @@ public class User implements java.io.Serializable
     public java.util.Collection<Event> getEvent() {
         return this.event;
     }
+
+	public java.lang.String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(java.lang.String password) {
+		Password = password;
+	}
     
 }
 

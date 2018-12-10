@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.achiev.bean.User;
 
-
-@WebServlet(urlPatterns = {"/adminMonCompte.html", "/accueil.html", "/AdminReservations.html", "/AdminPlat.html", "/adminCarte.html", "/adminModifPlat.html",
-		"/adminCommandes.html", "adminAccueil.html" })
+@WebServlet(urlPatterns = { "/index.html", "" })
 public class ServletRedirection extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,31 +21,21 @@ public class ServletRedirection extends HttpServlet {
 		User user = (User) request.getSession().getAttribute("User");
 
 		response.setHeader("Cache-Control", "no-cache");
-		
+		if (path.equals("/index.html")) {
+			request.getRequestDispatcher("/WEB-INF/index.html").forward(request, response);
+		}
 		if (user != null) {
-			if(path.equals("/accueil.html")){
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/adminAccueil.html");
-				rd.forward(request, response);
-			}
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF" + path);
-			rd.forward(request, response);
+
+			request.getRequestDispatcher("/WEB-INF/IsConnected" + path).forward(request, response);
 		} else {
-			if(path.equals("/accueil.html")){
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.html");
-				rd.forward(request, response);
-			}
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/erreur.html");
-			rd.forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/NotConnected" + path).forward(request, response);
 		}
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/modules/module4/demonstrations/ajoutAvis.jsp");
-		rd.forward(request, response);
 	}
 
 }

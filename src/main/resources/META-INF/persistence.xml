@@ -19,7 +19,7 @@
 				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:sqlserver://10.48.101.15;databasename=FAB1-BDD" />
+				value="jdbc:sqlserver://10.48.101.15;databasename=ACHIEV" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />

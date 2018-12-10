@@ -1,0 +1,677 @@
+/* ! ! ! ! HEADER  ! ! ! !*/
+.header{
+    background: transparent url("http://sushi-recette.fr/wp-content/uploads/2014/12/fond-ardoise.jpg") no-repeat center bottom;
+    color: white;
+    background-size: cover;
+    margin-bottom: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+#logo {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    position: sticky;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li>a{
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 40px;
+    padding: 0 2em;
+    -webkit-transition: all .3s ease;
+}
+li>a:hover {
+    background: rgba(255, 255, 255, .9);
+    color: black;
+}
+
+#seConnecter:hover #iconUser1{
+	content: url('../icons/UserNoir.png');
+	background-size: 30px 30px;
+}
+
+#joliPanier:hover #iconPanier{
+	content: url('../icons/PanierNoir.png');
+	background-size: 30px 30px;
+}
+
+#seConnecter.active #iconUser1{
+	content: url('../icons/UserNoir.png');
+	background-size: 30px 30px;
+}
+
+#joliPanier.active #iconPanier{
+	content: url('../icons/PanierNoir.png');
+	background-size: 30px 30px;
+}
+
+
+.active {
+    background-color: #fff;
+    color: black;
+}
+
+/* ! ! ! ! BODY ! ! ! ! */
+
+h5 {
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+p {
+    text-align: justify;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* ! ! ! ! NOUS TROUVER ! ! ! ! */
+
+#noustrouvertitre {
+    margin: 30px;
+    text-align: center;
+}
+.adrr {
+    padding: 10px;
+}
+.adrrennes {
+    background: lightgrey;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* ! ! ! ! TABLEAU ! ! ! ! */
+#tableau {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tableau td, #panier_plat th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tableau tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableau tr:hover {background-color: #ddd;}
+
+#tableau th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+/* ! ! ! ! PLAT  ! ! ! !*/
+.photoPlat {
+
+    height: 400px;
+    background-image: url("http://image.noelshack.com/fichiers/2018/49/2/1543928370-boufbourg.jpg");
+    background-position: bottom;
+    background-size: cover;
+}
+
+
+
+#titlePlat, #prixPlat, #ajoutPlat {
+    position: center;
+    align-content: center;
+}
+
+
+#liste_plat > div, #liste_plat > div > div{
+	padding:0px;
+	padding-right: 0px;
+    padding-left: 0px;
+}
+
+
+/* ! ! ! ! FORMULAIRES ! ! ! ! */
+
+form {
+    /* Uniquement centrer le formulaire sur la page */
+    margin: auto;
+    width: 40%;
+}
+
+
+input {
+    /* Pour s'assurer que tous les champs texte ont la même police.
+       Par défaut, les textarea ont une police monospace */
+    font: 1em sans-serif;
+
+    box-sizing: border-box;
+
+    /* Pour harmoniser le look & feel des bordures des champs texte */
+    border: 1px solid #999;
+}
+
+.main{
+    text-align: center;
+}
+#alertpasswordconfirm, #alertmail, #alertpassword, #alertphone {
+    display: none;
+    font: 1em sans-serif;
+    margin-top: 10px;
+    position: center;
+
+    /* Pour que tous les champs texte aient la même dimension */
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #999;
+
+}
+
+input:focus     {
+    /* Pour souligner légèrement les éléments actifs */
+    border-color: #000;
+}
+
+#sinscrirelien {
+    text-align: center;
+}
+
+/* ! ! ! ! BUTTONS ! ! ! ! */
+
+#button {
+    padding: 15px;
+    text-align: center;
+}
+
+.button, .buttonNote,.buttoninscr {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+    background-color:#f9f9f9;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+.button:hover, .buttonNote:hover, .buttonsubmit:hover, .buttoninscr:hover{
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+    background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+    background-color:#e9e9e9;
+}
+.button:active, .buttonNote:active,.buttonsubmit:active, .buttoninscr:active {
+    position:relative;
+    top:1px;
+}
+
+.buttoncarte {
+    margin: 5px;
+    margin-top: 17px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+    background-color:#f9f9f9;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+
+.buttoncarte:hover {
+    margin: 5px;
+    margin-top: 17px;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+    background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+    background-color:#e9e9e9;
+}
+
+.buttoncarte:active {
+    margin: 5px;
+    margin-top: 17px;
+    position:relative;
+    top:1px;
+}
+
+.buttonconx {
+    padding: 6px 0 6px 0;
+    font: bold 13px Arial;
+    background: forestgreen;
+    color: white;
+    border-radius: 2px;
+    width: 150px;
+    border: 1px solid #ccc;
+    margin-top: -100px;
+}
+
+.buttondiscon, .buttonmodif {
+
+    margin-top: 17px;
+    margin-right: 15px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+    background-color:#f9f9f9;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+
+}
+
+.buttondiscon:hover, .buttonmodif:hover {
+    margin-right: 15px;
+    margin-top: 17px;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+    background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+    background-color:#e9e9e9;
+}
+
+.buttondiscon:active, .buttonmodif:active {
+    margin-right: 15px;
+    margin-top: 17px;
+    position:relative;
+    top:1px;
+}
+
+.buttondesincr {
+    padding:6px 0 6px 0;
+    font:bold 13px Arial;
+    background:darkred;
+    color:white;
+    border-radius:2px;
+    width:150px;
+    border:1px solid #ccc;
+    margin-right: 20px;
+}
+
+.buttonvalnote {
+    padding:6px 0 6px 0;
+    font:bold 13px Arial;
+    background:#f5f5f5;
+    color:#555;
+    border-radius:2px;
+    width:150px;
+    border:1px solid #ccc;
+    margin-right: 0px;
+
+}
+
+.buttonCmd {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+    background-color:#f9f9f9;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+
+.buttonCmd:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+    background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+    background-color:#e9e9e9;
+}
+
+.buttonCmd:active {
+    position:relative;
+    top:1px;
+}
+
+#btnSubmit{
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+    background-color:#f9f9f9;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+    margin-left: 85%;
+}
+
+#btnSubmit:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+    background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+    background-color:#e9e9e9;
+    margin-left: 85%;
+}
+
+#btnSubmit:active {
+    position:relative;
+    top:1px;
+    margin-left: 85%;
+}
+
+.buttonsubmit {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+    background-color:#f9f9f9;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+    margin-left: 70%;
+    margin-top: -20px;
+}
+
+.buttonsubmit:hover {
+
+}
+.buttonsubmit:active {
+
+}
+
+/* ! ! ! ! AVIS ! ! ! ! */
+.notearea {
+    width: 100%;
+}
+.headernote {
+    margin-left: 20px;
+}
+
+.heading {
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+.fa {
+    font-size: 25px;
+}
+
+.checked {
+    color: orange;
+}
+
+/* Three column layout */
+.side {
+    float: left;
+    width: 15%;
+    margin-top: 10px;
+}
+
+.middle {
+    float: left;
+    width: 70%;
+    margin-top: 10px;
+}
+
+/* Place text to the right */
+.right {
+    text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The bar container */
+.bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: darkgrey;}
+.bar-4 {width: 30%; height: 18px; background-color: darkgrey;}
+.bar-3 {width: 10%; height: 18px; background-color: darkgrey;}
+.bar-2 {width: 4%; height: 18px; background-color: darkgrey;}
+.bar-1 {width: 15%; height: 18px; background-color: darkgrey;}
+
+
+/* ! ! ! ! CARTE  ! ! ! !*/
+.div_plat #blackrow{
+    padding: 0px;
+    width: 100%;
+}
+
+#titlePlat {
+    padding-left: 50px;
+}
+
+.imgCarte {
+    width: 350px;
+    margin: 5px;
+}
+
+.plat__title {
+    color: black;
+    font-size: 40px;
+    margin: 15px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.plats__title {
+    color: white;
+    font-size: 25px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.plat {
+    margin: 15px;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.plats__transform {
+    width: 350px;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+}
+
+#blackrow, #blackrow2, #blackrow3 {
+    background: rgba(0, 0, 0, 0.6);
+    height: 70px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.cartetoplat {
+    color: #fff;
+}
+
+.cartetoplat:hover {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+/* ! ! ! ! ERREUR ! ! ! ! */
+#imgErreur {
+    background: url("https://i.gifer.com/Rbeh.gif");
+    background-position: center top;
+    background-size: 600px;
+    height: 400px;
+}
+
+#mainerreur {
+    background: whitesmoke;
+}
+
+#titreerreur {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: darkred;
+    font-size: 100px;
+    text-align: center;
+}
+
+#hahaha {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 50px;
+    text-align: center;
+}
+
+/* ! ! ! ! FOOTER ! ! ! ! */
+
+.fixed-bottom {
+    background: transparent url("http://sushi-recette.fr/wp-content/uploads/2014/12/fond-ardoise.jpg") no-repeat center bottom;
+    background-size: cover;
+    color: white;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: right;
+}
+
+#copyright {
+    text-align: right;
+    margin-right: 20px;
+}
+
+#finBody {
+    height: 20px;
+    margin-top: 10px;
+    background: white;
+    color: white;
+}

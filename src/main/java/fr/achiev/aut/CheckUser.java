@@ -6,7 +6,6 @@ import fr.achiev.bean.User;
 
 public class CheckUser {
 	/**
-	 * 
 	 * @param User
 	 * @return la liste des messages d'erreurs lors du check de l'User
 	 */
