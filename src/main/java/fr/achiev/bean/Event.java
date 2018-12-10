@@ -1,4 +1,4 @@
-package bo;
+package fr.achiev.bean;
 
 
 @javax.persistence.Entity
