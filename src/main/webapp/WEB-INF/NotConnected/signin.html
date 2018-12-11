@@ -1,17 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inscription</title>
-	 <link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>Error</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
-<body class="container">
-	<div class="col-12">
-		<p>Coucoucoucouc je suis un texte d'inscription</p>
+
+<header class="header fixed-top">
+  <nav class="navbar navbar-expand-lg">
+  	<a class="navbar-brand" href="index.html"><img src="img/AllyHorde.png" id="allyHorde"></a>
+  		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   			<ul class="navbar-nav mr-auto">
+     			<li class="nav-item">
+       				 <a class="nav-link" href="#">CREATION?</a>
+      			</li>
+    		</ul>
+  		</div>
+	</nav>       
+</header>
+<body>
+	<div class="container">
+		<div class="row" id="jumpHeader">
 		
 	</div>
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-6">
+			<h2>Inscription</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<form>
+    <p >Prenom :</p>
+    <div class="form-group">
+        <input type="text" class="form-control" id="prenom" placeholder="Jean-Jacques">
+    </div>
+    <p>Nom :</p>
+    <div class="form-group">
+        <input type="text" class="form-control" id="nom" placeholder="Du Trou">
+    </div>
+    <p>Telephone :</p>
+    <div class="form-group">
+        <input type="tel" class="form-control" id="telephone" placeholder="00 00 00 00 00" onkeyup="setAlertPhone()">
+        <div id="alertphone" class="alert alert-success" role="alert"> ok </div>
+    </div>
+    <p class="label">E-mail :</p>
+    <div class="form-group">
+        <input type="email" class="form-control" id="mail" placeholder="mail@mail.com" onkeyup="setAlertEmail()">
+        <div id="alertmail" class="alert alert-success" role="alert"> ok </div>
+    </div>
+    <p class="label">Mot de Passe :</p>
+    <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder="password" onkeyup="setAlertPassword()">
+        <div id="alertpassword" class="alert alert-success" role="alert"></div>
+    </div>
+    <p class="label">Confirmer mot de passe :</p>
+    <div class="form-group">
+        <input type="password" class="form-control" id="passwordconfirm" placeholder="password" onkeyup="setAlertPasswordConfirm()">
+        <div id="alertpasswordconfirm" class="alert alert-success" role="alert"> ok </div>
+        <button type="button" class="buttonsubmit" onclick="setUser()">S'inscrire</button>
+    </div>
+
+</form>
+<div class="col-3"></div>
+		</div>
+		
+	
+
+	</div>
+	</div>
+	
+	
+	
 
 </body>
+<footer class="page-footer font-small fixed-bottom">
+  <div class="footer-copyright text-center py-3">Footer de merde</div>
+</footer>
 </html>
