@@ -32,10 +32,13 @@ footer{
     color: white;   
 }
 
+
 body{
     background-color: #474747;
     color: white;
 }
+    
+
 .lien{
     transition: color 1s ease;
     color: white;
