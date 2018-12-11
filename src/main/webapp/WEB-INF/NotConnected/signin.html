@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Error</title>
+	<title>Signin</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -31,43 +31,42 @@
 		<div class="col-6">
 			<h2>Inscription</h2>
 		</div>
+		<div class="col-3"></div>
 	</div>
 	<div class="row">
-		<div class="col-12">
+		<div class="col-2"></div>
+		<div class="col-8">
 			<form>
-    <p >Prenom :</p>
-    <div class="form-group">
-        <input type="text" class="form-control" id="prenom" placeholder="Jean-Jacques">
-    </div>
-    <p>Nom :</p>
-    <div class="form-group">
-        <input type="text" class="form-control" id="nom" placeholder="Du Trou">
-    </div>
-    <p>Telephone :</p>
-    <div class="form-group">
-        <input type="tel" class="form-control" id="telephone" placeholder="00 00 00 00 00" onkeyup="setAlertPhone()">
-        <div id="alertphone" class="alert alert-success" role="alert"> ok </div>
-    </div>
-    <p class="label">E-mail :</p>
-    <div class="form-group">
-        <input type="email" class="form-control" id="mail" placeholder="mail@mail.com" onkeyup="setAlertEmail()">
-        <div id="alertmail" class="alert alert-success" role="alert"> ok </div>
-    </div>
-    <p class="label">Mot de Passe :</p>
-    <div class="form-group">
-        <input type="password" class="form-control" id="password" placeholder="password" onkeyup="setAlertPassword()">
-        <div id="alertpassword" class="alert alert-success" role="alert"></div>
-    </div>
-    <p class="label">Confirmer mot de passe :</p>
-    <div class="form-group">
-        <input type="password" class="form-control" id="passwordconfirm" placeholder="password" onkeyup="setAlertPasswordConfirm()">
-        <div id="alertpasswordconfirm" class="alert alert-success" role="alert"> ok </div>
-        <button type="button" class="buttonsubmit" onclick="setUser()">S'inscrire</button>
-    </div>
-
-</form>
-<div class="col-3"></div>
+			    <p>Username :</p>
+			    <div class="form-group">
+			    	
+			        <input type="text" class="form-control" id="username" placeholder="Username">
+			    </div>
+			    <p>BattleTag :</p>
+			    <div class="form-group">
+			        <input type="text" class="form-control" id="battletag" placeholder="Example#6969">
+			    </div>
+			    <p class="label">Server :</p>
+			    <div class="form-group">
+			        <select class="form-control" id="server">
+					    <option value="1"><img src="img/Ally.png"></option>
+					    <option value="0"><img src="img/Horde.png"></option>
+					  </select>
+			    </div>
+			    <p class="label">Mot de Passe :</p>
+			    <div class="form-group">
+			        <input type="password" class="form-control" id="password" placeholder="password" onkeyup="setAlertPassword()">
+			        <div id="alertpassword" class="alert alert-success" role="alert"></div>
+			    </div>
+			    <p class="label">Confirmer mot de passe :</p>
+			    <div class="form-group">
+			        <input type="password" class="form-control" id="passwordconfirm" placeholder="password" onkeyup="setAlertPasswordConfirm()">
+			        <div id="alertpasswordconfirm" class="alert alert-success" role="alert"> ok </div>
+			        <button type="button" class="buttonsubmit" onclick="setUser()">S'inscrire</button>
+			    </div>
+			</form>
 		</div>
+		<div class="col-2"></div>
 		
 	
 
