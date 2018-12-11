@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>La Fourchette à Bretelles - Accueil</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+</head>
+<body>
+<header class="header fixed-top">
+    <div class="container-fluid">
+
+        <img src="icons/LogoFAB-02.png" id="logo" height="120px"/>
+        <nav>
+            <ul>
+                <li><a href="accueil.html" class="active">Accueil</a></li>
+                <li><a href="carte.html">Carte</a></li>
+                <li><a href="reservation.html">Reserver</a></li>
+                <li><a href="noustrouver.html">Nous trouver</a></li>
+                <li id="connectSwitch"><a href="connexion.html">Se Connecter <img src="icons/UserBlanc.png"
+                                                                                  height="30"/></a></li>
+                <li><a href="panier.html"><img src="icons/PanierBlanc.png" height="30"/></a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        function swiitch() {
+            console.log("ca passe ici et c'est " + sessionStorage.getItem("isconnected"))
+            if (sessionStorage.getItem("isconnected") == "true") {
+            	document.getElementById("connectSwitch").innerHTML = '<a id="seConnecter" href="monCompte.html">Mon compte  <img src="icons/UserBlanc.png" id="iconUser1" height="30"/><img src="icons/UserNoir.png" id="iconUser2" height="30" style="display:none"/></a>';
+            } else {
+                console.log("c'est faux là et sa passe")
+                document.getElementById("connectSwitch").innerHTML = '<a id="seConnecter" href="connexion.html">Se Connecter <img src="icons/UserBlanc.png" id="iconUser1" height="30"/><img src="icons/UserNoir.png" id="iconUser2" height="30" style="display:none"/></a>';
+            }
+        }
+
+        swiitch();
+    </script>
+</header>
+
+<div height="120px"></div>
+
+<div id="button">
+    <a href="carte.html">
+        <button class="button" type="cmdBtn">Commander</button>
+    </a>
+    <a href="reservation.html">
+        <button class="button" type="rsvBtn">Reserver</button>
+    </a>
+</div>
+<div class="container">
+    <div class="row">
+
+        <div class="col-12 col-md-4">
+            <section class="actu">
+                <h3>Actualité</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolores labore quod quos
+                    recusandae. Adipisci aliquam autem, corporis cum dolorem eius et, minus neque, nisi non odit officia
+                    perferendis quisquam?</p>
+                <p>Asperiores atque commodi delectus dolore, dolorum ex explicabo harum hic, itaque maiores modi quasi
+                    recusandae repellendus temporibus veritatis. Laborum quos, recusandae! Dolorem facere hic ipsum
+                    minima modi nesciunt quas voluptatum?</p>
+                <p>A accusamus aliquam aspernatur ea eos exercitationem, facilis id impedit magnam magni maxime
+                    necessitatibus nemo omnis ratione sequi sit soluta ullam ut veniam, veritatis? Amet cumque dolor
+                    earum ipsa velit.</p>
+            </section>
+        </div>
+        <div class="col-12 col-md-8">
+            <section class="platJour">
+                <h3>Plat du Jour</h3>
+                <div class="container">
+                    <div class="row">
+                        <div id="imgPlatAccueil" class="col-12 col-md-4">
+
+
+                        </div>
+
+                        <div class="col-12 col-md-8">
+                            <h4 id="nomPlat"></h4>
+                            <p><span id="platDuMoment"></span></p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div id="finBody"><p>FINBODY</p></div>
+    <nav class="fixed-bottom">
+        <p id="copyright">@ Copyright Fourchette à Bretelles</p>
+    </nav>
+</footer>
+<script src="js/accueil.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+#quest_image{
+    background-image: url("../images/Empty_Quest.png");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 439px;
+}
