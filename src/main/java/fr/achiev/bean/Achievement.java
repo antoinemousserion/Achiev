@@ -1,5 +1,6 @@
 package fr.achiev.bean;
 
+import java.util.List;
 
 @javax.persistence.Entity
 @javax.annotation.Generated("com.genmymodel.jpa")
@@ -13,6 +14,8 @@ public class Achievement implements java.io.Serializable
     private java.lang.String Name;
     
     private java.lang.String Description;
+    
+    private List<User> Subscribers;
     
 
     
@@ -44,6 +47,14 @@ public class Achievement implements java.io.Serializable
     public java.lang.String getDescription() {
         return this.Description;
     }
+
+	public List<User> getSubscribers() {
+		return Subscribers;
+	}
+
+	public void setSubscribers(List<User> subscribers) {
+		Subscribers = subscribers;
+	}
     
 
     

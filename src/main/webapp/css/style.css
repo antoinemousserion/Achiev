@@ -1,6 +1,34 @@
 #jumpHeader{
-    height: 120px
+    height: 85px
 }
 header{
-    height: 80px
+    height: 80px;
+}
+#allyHorde{
+    width: 50px;
+}
+.navbar{
+    transition: background-color 0.5s ease;
+    background-color: #353535;
+    font-size: 
+}
+.navbar-brand{
+
+}
+.nav-link{
+    transition: background-color 0.5s ease;
+    background-color: #4F4F4F;
+    color: white;
+    border-radius: 200px;
+}
+
+.nav-link:hover{
+    transition: background-color 0.5s ease;
+    background-color: #7D7D7D;
+    color: white;   
+}
+
+body{
+    background-color: #474747;
+    color: white;
 }
