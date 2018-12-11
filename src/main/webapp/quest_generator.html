@@ -20,55 +20,65 @@
     </nav>
 </header>
 <main>
-<div class="container">
-		<div class="row" id="jumpHeader"></div>
-	</div>
+    <div class="container">
+        <div class="row" id="jumpHeader"></div>
+    </div>
     <div class="container">
         <div class="row" id="creation">
             <div class="col-12">
 
-                <h2>Create your Rendez-Vous</h2>
+                <h2>Create your Event</h2>
                 <hr>
-                <form action="addRendezVous()" class="row">
-                    <div class="form-group col-12">
-                        <label for="AchievementName">Achievement</label>
-                        <input type="text" class="form-control" id="AchievementName"  placeholder="Enter the name of the achievement">
-                    </div>
+                <div id="form_creation">
+                    <form action="addRendezVous()" class="row">
+                        <div class="form-group col-12">
+                            <label for="AchievementName">Achievement</label>
+                            <input type="text" class="form-control" id="AchievementName"
+                                   placeholder="Enter the name of the achievement">
+                        </div>
 
-                    <div class="form-group col-12">
-                        <label for="description">Description</label>
-                        <input type="text" class="form-control" id="description" placeholder="Enter specific details">
-                    </div>
+                        <div class="form-group col-12">
+                            <label for="description">Description</label>
+                            <textarea type="text" class="form-control" id="description"
+                                   placeholder="Enter specific details" rows="3"></textarea>
+                        </div>
 
-                    <div class="form-group col-2">
-                        <label for="minimum">Minimum players</label>
-                        <input type="number" class="form-control" id="minimum" placeholder="0">
-                    </div>
-                    <div class="form-group col-2">
-                        <label for="maximum">Maximum players</label>
-                        <input type="number" class="form-control" id="maximum" placeholder="0">
-                    </div>
+                        <div class="form-group col-2">
+                            <label for="minimum">Minimum players</label>
+                            <input type="number" class="form-control" id="minimum" placeholder="0">
+                        </div>
+                        <div class="form-group col-2">
+                            <label for="maximum">Maximum players</label>
+                            <input type="number" class="form-control" id="maximum" placeholder="0">
+                        </div>
 
-                    <div class="col-8"> </div>
+                        <div class="col-8"></div>
 
-                    <div class="form-group col-3">
-                        <label for="hour">Date</label>
-                        <input type="datetime-local" class="form-control" id="date" placeholder="">
-                    </div>
-                    <div class="form-group col-2">
-                        <label for="hour">Hour</label>
-                        <input type="time" class="form-control" id="hour" placeholder="">
-                    </div>
+                        <div class="form-group col-3">
+                            <label for="date">Date</label>
+                            <input type="datetime-local" class="form-control" id="date" placeholder="">
+                        </div>
+                        <div class="form-group col-2">
+                            <label for="time">Time</label>
+                            <input type="time" class="form-control" id="time" placeholder="">
+                        </div>
 
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        aria-describedby="emailHelp"
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
+                        <div class="col-7"></div>
 
-                    <button type="submit" class="btn btn-primary">Accept</button>
-                </form>
+                        <div class="form-group form-check col-6">
+                            <label for="Btag">Battle.net tag</label>
+                            <input type="text" class="form-control" id="Btag" placeholder="">
+
+                            <small id="emailHelp" class="form-text text-muted">Your Battle.Net tag will only be visible
+                                to the members of your event
+                            </small>
+                        </div>
+                        <div class="col-12"></div>
+                        <hr>
+                        <div class="col-11"></div>
+                        <button type="submit" class="btn btn-primary">Accept</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
