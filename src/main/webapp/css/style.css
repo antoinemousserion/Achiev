@@ -39,3 +39,12 @@ body{
     background-color: #474747;
     color: white;
 }
+.lien{
+    transition: color 1s ease;
+    color: white;
+    text-decoration: underline;
+}
+.lien:hover{
+    transition: color 1s ease;
+    color: #4AE302;
+}
