@@ -39,6 +39,14 @@ body{
     background-color: #474747;
     color: white;
 }
+
+#form_creation{
+    background-color: #363636;
+    border-radius: 25px;
+}
+#inFormCreation{
+    padding: 20px;
+}
     
 
 .lien{
