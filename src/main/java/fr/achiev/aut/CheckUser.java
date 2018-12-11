@@ -10,7 +10,7 @@ public class CheckUser {
 	 * @return la liste des messages d'erreurs lors du check de l'User
 	 */
 	public static List<String> check(User u) {
-		return null;
+		return new ArrayList<>();
 
 	}
 }

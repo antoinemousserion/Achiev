@@ -40,21 +40,21 @@ public class UserManager {
 
 	}
 
-	@Path("/inscription")
+	@Path("/signin")
 	@POST
 	public Response addUser(User u) {
 		Response res = null;
-
+		List<String> errs = CheckUser.check(u);
 		try {
-			List<String> errs = CheckUser.check(u);
+			
 			if (!errs.isEmpty()) {
 				return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 			}
 
-			User isPresent = daoStr.findByAttr(User.class, "email", u.getBattleTag());
+			User isPresent = daoStr.findByAttr(User.class, "BattleTag", u.getBattleTag());
 
 			if (isPresent != null) {
-				errs.add("Cet Email existe déja !");
+				errs.add("This battleTag already exists !");
 				res = Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 
 			} else {
@@ -64,7 +64,8 @@ public class UserManager {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			errs.add(e.getMessage());
+			res = Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(errs).build();
 		}
 
 		return res;
@@ -108,9 +109,7 @@ public class UserManager {
 		user.setPassword(u.getPassword());
 		user.setBattleTag(u.getBattleTag());
 		user.setEvent(u.getEvent());
-		user.setFaction(u.getFaction());
 		user.setUsername(u.getUsername());
-		user.setServer(u.getServer());
 
 		try {
 			daoInt.update(user);
