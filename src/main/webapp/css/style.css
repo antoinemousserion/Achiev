@@ -4,6 +4,13 @@
 header{
     height: 80px;
 }
+footer{
+    background-color: #353535;
+}
+#footer{
+    top: 50%;
+    bottom:50%;
+}
 #allyHorde{
     width: 50px;
 }
@@ -17,7 +24,7 @@ header{
 }
 .nav-link{
     transition: background-color 0.5s ease;
-    background-color: #4F4F4F;
+    background-color: #353535;
     color: white;
     border-radius: 200px;
 }
