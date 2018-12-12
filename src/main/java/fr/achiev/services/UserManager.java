@@ -11,6 +11,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
@@ -28,14 +29,26 @@ public class UserManager {
 
 	@GET
 	public List<User> getUsers() {
-		return daoInt.findAll(User.class);
+		User u = new User();
+		u.setBattleTag("testBtag");
+		u.setUsername("usernameTest");
+		//return daoInt.findAll(User.class);
+		List<User> res = new ArrayList<>();
+		res.add(u);
+		System.out.println(res);
+		return res;
 	}
 
 	@Path("/userSession")
 	@GET
 	public User getUserById() {
+		User u = new User();
+		u.setBattleTag("testBtag");
+		u.setUsername("usernameTest");
 		HttpSession session = httpServletRequest.getSession();
-		User res = (User) session.getAttribute("User");
+		session.setAttribute("userConnected", u);
+		User res = (User) session.getAttribute("userConnected");
+		System.out.println(res.getBattleTag());
 		return res;
 
 	}
@@ -45,6 +58,8 @@ public class UserManager {
 	public Response addUser(User u) {
 		Response res = null;
 		List<String> errs = CheckUser.check(u);
+		System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
+		System.out.println();
 		try {
 			
 			if (!errs.isEmpty()) {

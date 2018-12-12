@@ -1,5 +1,7 @@
 package fr.achiev.bean;
 
+import java.util.List;
+
 @javax.persistence.Entity
 @javax.annotation.Generated("com.genmymodel.jpa")
 public class User implements java.io.Serializable {
@@ -17,7 +19,7 @@ public class User implements java.io.Serializable {
 	@javax.persistence.OneToMany(
 
 	)
-	java.util.Collection<Event> event;
+	List<Event> event;
 
 	@javax.annotation.Generated("com.genmymodel.jpa")
 	public void setId(java.lang.Integer id) {
@@ -50,12 +52,12 @@ public class User implements java.io.Serializable {
 	}
 
 	@javax.annotation.Generated("com.genmymodel.jpa")
-	public void setEvent(java.util.Collection<Event> event) {
+	public void setEvent(List<Event> event) {
 		this.event = event;
 	}
 
 	@javax.annotation.Generated("com.genmymodel.jpa")
-	public java.util.Collection<Event> getEvent() {
+	public List<Event> getEvent() {
 		return this.event;
 	}
 

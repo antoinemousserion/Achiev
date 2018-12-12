@@ -19,13 +19,13 @@
 				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:sqlserver://10.48.101.15;databasename=ACHIEV" />
+				value="jdbc:sqlserver://localhost;databasename=ACHIEV" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.user" value="DESKTOP-1S33G4H" />
 			<property name="javax.persistence.jdbc.password"
-				value="Pa$$w0rd" />
+				value="" />
 		</properties>
 	</persistence-unit>
 
