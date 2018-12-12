@@ -16,38 +16,39 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
 import fr.achiev.aut.CheckUser;
-import fr.achiev.bean.User;
+import fr.achiev.bean.UserAchiev;
 import fr.achiev.dal.GenericDao;
 import fr.achiev.dal.GenericDaoImpl;
 
-@Path("/users")
-public class UserManager {
-	private GenericDao<User, Integer> daoInt = new GenericDaoImpl<>();
-	private GenericDao<User, String> daoStr = new GenericDaoImpl<>();
+@Path("/UserAchievs")
+public class UserAchievManager {
+	private GenericDao<UserAchiev, Integer> daoInt = new GenericDaoImpl<>();
+	private GenericDao<UserAchiev, String> daoStr = new GenericDaoImpl<>();
 	@Context
 	private HttpServletRequest httpServletRequest;
 
 	@GET
-	public List<User> getUsers() {
-		User u = new User();
+	public List<UserAchiev> getUserAchievs() {
+		UserAchiev u = new UserAchiev();
+		u.setId(42);
 		u.setBattleTag("testBtag");
-		u.setUsername("usernameTest");
-		//return daoInt.findAll(User.class);
-		List<User> res = new ArrayList<>();
+		u.setUsername("UsernameTest");
+		//return daoInt.findAll(UserAchiev.class);
+		List<UserAchiev> res = new ArrayList<>();
 		res.add(u);
 		System.out.println(res);
 		return res;
 	}
 
-	@Path("/userSession")
+	@Path("/UserAchievSession")
 	@GET
-	public User getUserById() {
-		User u = new User();
+	public UserAchiev getUserAchievById() {
+		UserAchiev u = new UserAchiev();
 		u.setBattleTag("testBtag");
-		u.setUsername("usernameTest");
+		u.setUsername("UsernameTest");
 		HttpSession session = httpServletRequest.getSession();
-		session.setAttribute("userConnected", u);
-		User res = (User) session.getAttribute("userConnected");
+		session.setAttribute("UserConnected", u);
+		UserAchiev res = (UserAchiev) session.getAttribute("UserConnected");
 		System.out.println(res.getBattleTag());
 		return res;
 
@@ -55,7 +56,7 @@ public class UserManager {
 
 	@Path("/signin")
 	@POST
-	public Response addUser(User u) {
+	public Response addUserAchiev(UserAchiev u) {
 		Response res = null;
 		List<String> errs = CheckUser.check(u);
 		System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
@@ -66,7 +67,7 @@ public class UserManager {
 				return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 			}
 
-			User isPresent = daoStr.findByAttr(User.class, "BattleTag", u.getBattleTag());
+			UserAchiev isPresent = daoStr.findByAttr(UserAchiev.class, "BattleTag", u.getBattleTag());
 
 			if (isPresent != null) {
 				errs.add("This battleTag already exists !");
@@ -88,21 +89,21 @@ public class UserManager {
 
 	@Path("/connexion")
 	@POST
-	public Response connexion(User u) {
+	public Response connexion(UserAchiev u) {
 		List<String> errs = new ArrayList<>();
 
-		User user = daoStr.findByAttr(User.class, "BattleTag", u.getBattleTag());
+		UserAchiev UserAchiev = daoStr.findByAttr(UserAchiev.class, "BattleTag", u.getBattleTag());
 
-		if (user == null) {
-			errs.add("User inconnu");
+		if (UserAchiev == null) {
+			errs.add("UserAchiev inconnu");
 			return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 		}
 		// TODO encrypt
-		if (user.getPassword().trim().equals(u.getPassword().trim())) {
+		if (UserAchiev.getPassword().trim().equals(u.getPassword().trim())) {
 			// mise en sessions
 			HttpSession session = httpServletRequest.getSession();
 
-			session.setAttribute("User", user);
+			session.setAttribute("UserAchiev", UserAchiev);
 
 			return Response.ok().build();
 		}
@@ -113,21 +114,21 @@ public class UserManager {
 
 	@Path("/modification")
 	@PUT
-	public Response updateUser(User u) {
+	public Response updateUserAchiev(UserAchiev u) {
 		HttpSession session = httpServletRequest.getSession();
-		User user = (User) session.getAttribute("User");
+		UserAchiev UserAchiev = (UserAchiev) session.getAttribute("UserAchiev");
 		List<String> errs = CheckUser.check(u);
 		if (!errs.isEmpty()) {
 			return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 		}
 		// TODO encrypt
-		user.setPassword(u.getPassword());
-		user.setBattleTag(u.getBattleTag());
-		user.setEvent(u.getEvent());
-		user.setUsername(u.getUsername());
+		UserAchiev.setPassword(u.getPassword());
+		UserAchiev.setBattleTag(u.getBattleTag());
+		UserAchiev.setEvent(u.getEvent());
+		UserAchiev.setUsername(u.getUsername());
 
 		try {
-			daoInt.update(user);
+			daoInt.update(UserAchiev);
 		} catch (Exception e) {
 			errs.add("Erreur serveur");
 			return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
@@ -137,15 +138,15 @@ public class UserManager {
 
 	@Path("/desinscription")
 	@DELETE
-	public Response deleteUser() {
+	public Response deleteUserAchiev() {
 		HttpSession session = httpServletRequest.getSession();
-		User user = (User) session.getAttribute("User");
+		UserAchiev UserAchiev = (UserAchiev) session.getAttribute("UserAchiev");
 		List<String> errs = new ArrayList<>();
 
-		session.setAttribute("User", null);
+		session.setAttribute("UserAchiev", null);
 
 		try {
-			daoInt.delete(user);
+			daoInt.delete(UserAchiev);
 		} catch (Exception e) {
 			errs.add("Erreur serveur");
 			return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
@@ -157,7 +158,7 @@ public class UserManager {
 	@POST
 	public void deconnexion() {
 		HttpSession session = httpServletRequest.getSession();
-		session.setAttribute("User", null);
+		session.setAttribute("UserAchiev", null);
 	}
 
 }

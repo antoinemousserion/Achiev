@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.achiev.bean.User;
+import fr.achiev.bean.UserAchiev;
 
 @WebServlet(urlPatterns = { "/index.html", "/signin.html", "/login.html", "/account.html" })
 public class ServletRedirection extends HttpServlet {
@@ -20,7 +20,7 @@ public class ServletRedirection extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String path = request.getServletPath();
-		User user = (User) request.getSession().getAttribute("User");
+		UserAchiev UserAchiev = (UserAchiev) request.getSession().getAttribute("UserAchiev");
 		List<String> accesIfConnected = new ArrayList<>();
 		accesIfConnected.add("/account.html");
 
@@ -29,7 +29,7 @@ public class ServletRedirection extends HttpServlet {
 		if (path.equals("/index.html")) {
 			request.getRequestDispatcher("/WEB-INF/index.html").forward(request, response);
 			return;
-		} else if (user != null) {
+		} else if (UserAchiev != null) {
 
 			request.getRequestDispatcher("/WEB-INF/IsConnected" + path).forward(request, response);
 		} else {

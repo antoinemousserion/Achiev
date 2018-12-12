@@ -2,14 +2,14 @@ package fr.achiev.aut;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.achiev.bean.User;
+import fr.achiev.bean.UserAchiev;
 
 public class CheckUser {
 	/**
-	 * @param User
-	 * @return la liste des messages d'erreurs lors du check de l'User
+	 * @param UserAchiev
+	 * @return la liste des messages d'erreurs lors du check de l'UserAchiev
 	 */
-	public static List<String> check(User u) {
+	public static List<String> check(UserAchiev u) {
 		return new ArrayList<>();
 
 	}

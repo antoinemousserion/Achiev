@@ -27,7 +27,7 @@ public class Event implements java.io.Serializable
     @javax.persistence.OneToMany(
         
     )
-    java.util.Collection<User> user;
+    java.util.Collection<UserAchiev> UserAchiev;
 
     @javax.annotation.Generated("com.genmymodel.jpa")
     public void setId(java.lang.Integer id) {
@@ -86,13 +86,13 @@ public class Event implements java.io.Serializable
         return this.achievement;
     }
     @javax.annotation.Generated("com.genmymodel.jpa")
-    public void setUser(java.util.Collection<User> user) {
-        this.user = user;
+    public void setUserAchiev(java.util.Collection<UserAchiev> UserAchiev) {
+        this.UserAchiev = UserAchiev;
     }
     
     @javax.annotation.Generated("com.genmymodel.jpa")
-    public java.util.Collection<User> getUser() {
-        return this.user;
+    public java.util.Collection<UserAchiev> getUserAchiev() {
+        return this.UserAchiev;
     }
     
 }

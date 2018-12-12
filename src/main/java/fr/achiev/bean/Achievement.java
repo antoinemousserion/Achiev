@@ -15,7 +15,7 @@ public class Achievement implements java.io.Serializable
     
     private java.lang.String Description;
     
-    private List<User> Subscribers;
+    private List<UserAchiev> Subscribers;
     
 
     
@@ -48,11 +48,11 @@ public class Achievement implements java.io.Serializable
         return this.Description;
     }
 
-	public List<User> getSubscribers() {
+	public List<UserAchiev> getSubscribers() {
 		return Subscribers;
 	}
 
-	public void setSubscribers(List<User> subscribers) {
+	public void setSubscribers(List<UserAchiev> subscribers) {
 		Subscribers = subscribers;
 	}
     

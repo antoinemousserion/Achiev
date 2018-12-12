@@ -2,12 +2,16 @@ package fr.achiev.bean;
 
 import java.util.List;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 @javax.persistence.Entity
 @javax.annotation.Generated("com.genmymodel.jpa")
-public class User implements java.io.Serializable {
+public class UserAchiev implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private java.lang.Integer id;
 
 	private java.lang.String Username;

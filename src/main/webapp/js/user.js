@@ -10,12 +10,13 @@ function test(){
         method: 'get',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json; charset=utf-8'
         }
     }).then(function f(response){
+        console.log(response);
         return response.json();
     }).then(function f(repJson){
-        alert(repJson);
+        console.log(repJson);
     });
 }
 function register(){
