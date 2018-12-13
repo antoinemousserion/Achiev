@@ -20,7 +20,7 @@ import fr.achiev.bean.UserAchiev;
 import fr.achiev.dal.GenericDao;
 import fr.achiev.dal.GenericDaoImpl;
 
-@Path("/UserAchievs")
+@Path("/users")
 public class UserAchievManager {
 	private GenericDao<UserAchiev, Integer> daoInt = new GenericDaoImpl<>();
 	private GenericDao<UserAchiev, String> daoStr = new GenericDaoImpl<>();
@@ -40,7 +40,7 @@ public class UserAchievManager {
 		return res;
 	}
 
-	@Path("/UserAchievSession")
+	@Path("/usersession")
 	@GET
 	public UserAchiev getUserAchievById() {
 		UserAchiev u = new UserAchiev();

@@ -6,7 +6,7 @@ var battletag = document.getElementById('battletag');
 var password = document.getElementById('password');
 var passwordconfirm = document.getElementById('passwordconfirm');
 function test(){
-    fetch("services/users/userSession",{
+    fetch("services/users/usersession",{
         method: 'get',
         headers: {
             'Accept': 'application/json',

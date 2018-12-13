@@ -8,7 +8,7 @@
 		transaction-type="RESOURCE_LOCAL">
 
 
-		<class>fr.achiev.bean.User</class>
+		<class>fr.achiev.bean.UserAchiev</class>
 		<class>fr.achiev.bean.Event</class>
 		<class>fr.achiev.bean.Achievement</class>
 
@@ -19,13 +19,13 @@
 				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:sqlserver://localhost;databasename=ACHIEV" />
+				value="jdbc:sqlserver://localhost:1433;databasename=ACHIEV" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<property name="javax.persistence.jdbc.user" value="DESKTOP-1S33G4H" />
-			<property name="javax.persistence.jdbc.password"
-				value="" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="javax.persistence.jdbc.user" value="sa" />
+<!-- 			<property name="javax.persistence.jdbc.password" -->
+<!-- 				value="" /> -->
 		</properties>
 	</persistence-unit>
 
