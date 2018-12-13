@@ -15,7 +15,7 @@ public class TEST {
 		u.setEvent(new ArrayList<Event>());
 		u.setPassword("blabla");
 		u.setUsername("UsernameTest");
-		System.out.println(CheckUser.checkBattleTag("test#12a"));
+		
 		
 
 	}

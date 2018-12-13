@@ -29,29 +29,17 @@ public class UserAchievManager {
 
 	@GET
 	public List<UserAchiev> getUserAchievs() {
-//		UserAchiev u = new UserAchiev();
-//		u.setId(42);
-//		u.setBattleTag("testBtag22222");
-//		u.setUsername("UsernameTest");
+
 		return daoInt.findAll(UserAchiev.class);
-//		List<UserAchiev> res = new ArrayList<>();
-//		res.add(u);
-//		System.out.println(res);
-//		return res;
+
 	}
 
 	@Path("/usersession")
 	@GET
 	public UserAchiev getUserAchievById() {
-		UserAchiev u = new UserAchiev();
-		u.setBattleTag("testBtag");
-		u.setUsername("UsernameTest");
 		HttpSession session = httpServletRequest.getSession();
-		session.setAttribute("UserConnected", u);
 		UserAchiev res = (UserAchiev) session.getAttribute("UserConnected");
-		System.out.println(res.getBattleTag());
 
-		System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
 		return res;
 
 	}
@@ -63,7 +51,7 @@ public class UserAchievManager {
 		List<String> errs = CheckUser.check(u);
 		System.out.println("test");
 		try {
-			
+
 			if (!errs.isEmpty()) {
 				return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 			}
@@ -96,7 +84,7 @@ public class UserAchievManager {
 		UserAchiev UserAchiev = daoStr.findByAttr(UserAchiev.class, "BattleTag", u.getBattleTag());
 
 		if (UserAchiev == null) {
-			errs.add("UserAchiev inconnu");
+			errs.add("User unknow");
 			return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 		}
 		// TODO encrypt
