@@ -76,7 +76,7 @@ public class UserAchievManager {
 		return res;
 	}
 
-	@Path("/connexion")
+	@Path("/login")
 	@POST
 	public Response connexion(UserAchiev u) {
 		List<String> errs = new ArrayList<>();
@@ -89,14 +89,15 @@ public class UserAchievManager {
 		}
 		// TODO encrypt
 		if (UserAchiev.getPassword().trim().equals(u.getPassword().trim())) {
-			// mise en sessions
+			
 			HttpSession session = httpServletRequest.getSession();
-
-			session.setAttribute("UserAchiev", UserAchiev);
+			session.setAttribute("UserConnected", UserAchiev);
+			
+			System.out.println(session.getAttribute("UserConnected"));
 
 			return Response.ok().build();
 		}
-		errs.add("Mot de passe incorrect");
+		errs.add("Incorrect password");
 		return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 
 	}

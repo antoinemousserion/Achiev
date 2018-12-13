@@ -45,3 +45,27 @@ function checkPassword(){
     alert("You must confirm your password correctly");
 	return false;
 }
+
+function connection(){
+        user.battleTag = document.getElementById('battletag').value;
+        user.password = document.getElementById('password').value;
+
+        fetch("services/users/login", {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    }).then(function f(response){
+        if(response.ok){
+            alert("Welcome !");
+            return null;
+        }
+        return response.json();
+    }).then(function f(repJson){
+        if (repJson != null) {
+            alert(repJson);
+        }
+    })
+}
