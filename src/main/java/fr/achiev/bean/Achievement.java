@@ -15,6 +15,9 @@ public class Achievement implements java.io.Serializable
     
     private java.lang.String Description;
     
+    @javax.persistence.OneToMany(
+
+    		)
     private List<UserAchiev> Subscribers;
     
 

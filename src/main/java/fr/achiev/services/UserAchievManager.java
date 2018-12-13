@@ -29,15 +29,15 @@ public class UserAchievManager {
 
 	@GET
 	public List<UserAchiev> getUserAchievs() {
-		UserAchiev u = new UserAchiev();
-		u.setId(42);
-		u.setBattleTag("testBtag");
-		u.setUsername("UsernameTest");
-		//return daoInt.findAll(UserAchiev.class);
-		List<UserAchiev> res = new ArrayList<>();
-		res.add(u);
-		System.out.println(res);
-		return res;
+//		UserAchiev u = new UserAchiev();
+//		u.setId(42);
+//		u.setBattleTag("testBtag22222");
+//		u.setUsername("UsernameTest");
+		return daoInt.findAll(UserAchiev.class);
+//		List<UserAchiev> res = new ArrayList<>();
+//		res.add(u);
+//		System.out.println(res);
+//		return res;
 	}
 
 	@Path("/usersession")
@@ -50,6 +50,8 @@ public class UserAchievManager {
 		session.setAttribute("UserConnected", u);
 		UserAchiev res = (UserAchiev) session.getAttribute("UserConnected");
 		System.out.println(res.getBattleTag());
+
+		System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
 		return res;
 
 	}
@@ -59,8 +61,7 @@ public class UserAchievManager {
 	public Response addUserAchiev(UserAchiev u) {
 		Response res = null;
 		List<String> errs = CheckUser.check(u);
-		System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
-		System.out.println();
+		System.out.println("test");
 		try {
 			
 			if (!errs.isEmpty()) {

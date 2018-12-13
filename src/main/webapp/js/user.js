@@ -1,32 +1,15 @@
 var user = {
-}
+    }
 
-var username = document.getElementById('username');
-var battletag = document.getElementById('battletag');
-var password = document.getElementById('password');
-var passwordconfirm = document.getElementById('passwordconfirm');
-function test(){
-    fetch("services/users/usersession",{
-        method: 'get',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json; charset=utf-8'
-        }
-    }).then(function f(response){
-        console.log(response);
-        return response.json();
-    }).then(function f(repJson){
-        console.log(repJson);
-    });
-}
+
 function register(){
-test();
-return;
+    
 
-	if (checkPassword) {
-		user.username = username;
-		user.battleTag = battletag;
-		user.password = password;
+
+	if (checkPassword()) {
+		user.username = document.getElementById('username').value;
+		user.battleTag = document.getElementById('battletag').value;
+		user.password = document.getElementById('password').value;
 
 		fetch("services/users/signin", {
         method: 'post',
@@ -35,37 +18,30 @@ return;
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
-    }).then(function functionName (response) {
-            if(response.ok){
-                alert("Votre compte a été créé avec succès GG");
-                return;
-            }
-            error = true;
-            return response.json();
-
-        }).then( function functionName (repJson) {
-        if (repJson == null){
-            error = false;
-            return;
+    }).then(function f(response){
+        if(response.ok){
+            alert("Your account has been created, Welcome "+document.getElementById('username').value);
+            return null;
         }
-        // a rendre plus bo :
-        alert(repJson);
-
-    }).then(function f(){
-        if(!error){
-            location.replace(apiHost+"FAB1/connexion.html")
+        return response.json();
+    }).then(function f(repJson){
+        if (repJson != null) {
+            alert(repJson);
         }
     })
 	}
 }
 
 function checkPassword(){
-	if (password.value.length < 5) {
+    
+	if (document.getElementById('password').value.length < 5) {
+        alert("You must have more than 5 letters in your password");
 
 		return false;
 	}
-	if(passwordconfirm.value == password.value){
+	if(document.getElementById('passwordconfirm').value == document.getElementById('password').value){
 		return true;
 	}
+    alert("You must confirm your password correctly");
 	return false;
 }

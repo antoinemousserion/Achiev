@@ -11,7 +11,7 @@ public class DAOUtil {
 	private static EntityManager em;
 	
 	static {
-		emf = Persistence.createEntityManagerFactory("SQL-UP");
+		emf = Persistence.createEntityManagerFactory("Postgres_UP");
 		em = emf.createEntityManager();
 	}
 	
