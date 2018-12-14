@@ -60,6 +60,7 @@ function connection(){
     }).then(function f(response){
         if(response.ok){
             alert("Welcome !");
+             document.location.href="index.html";
             return null;
         }
         return response.json();
@@ -67,5 +68,43 @@ function connection(){
         if (repJson != null) {
             alert(repJson);
         }
+    })
+}
+function disconnect(){
+        
+        fetch("services/users/disconnect", {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+       
+    }).then(function f(){
+        document.location.href="login.html";
+    })
+}
+
+function displayUserConnected(){
+    var userCo = document.getElementById("userConnected");
+    fetch("services/users/usersession", {
+        method: 'get',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }).then(function f(response){
+        console.log("test");
+        if(!response.ok){
+           return response.json();
+        }
+        return null;
+       
+    }).then(function f(resJson){
+        if (resJson != null){
+            userCo.innerHTML = "Welcome <a href='account.html'>"+resJson.username +"</a>"
+        }else{
+            userCo.innerHTML = "<a href='login.html'>Log In</a>";
+        }
+        
     })
 }

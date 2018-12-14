@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import javax.servlet.http.HttpSession;
+
 import fr.achiev.bean.UserAchiev;
 
 public class CheckUser {
@@ -31,6 +33,12 @@ public class CheckUser {
 	}
 	private static boolean checkUsername(String username) {
 		if (username!=null && username.length()>0) {
+			return true;
+		}
+		return false;
+	}
+	public static boolean isConnected(HttpSession session) {
+		if(session.getAttribute("UserConnected") != null) {
 			return true;
 		}
 		return false;

@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Connexion</title>
+	<title>Account</title>
 	 <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/verifConnect.js"></script>
+    <script src="js/user.js"></script>
 </head>
 
 	<header class="header fixed-top">
 	<nav class="navbar navbar-expand-lg">
 		<a class="navbar-brand" href="index.html"><img
 			src="img/AllyHorde.png" id="allyHorde"></a>
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" href="#">Onglet</a>
-				</li>
+			<ul class="navbar-nav mr-auto list-inline">
+				<li class="nav-item list-inline-item"><a class="nav-link" href="index.html">Home</a></li>
+				<li class="nav-item list-inline-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+			</ul>
+			<ul class="navbar-fixed-left">
+				<li id="userConnected" class="nav-item list-inline-item">Welcome User</li>
 			</ul>
 		
 	</nav>
 </header>
-<body class="container">
-	<div class="col-12">
-		<p>Coucoucoucouc je suis un texte de mon compte</p>
+<body>
+	<div class="container">
+		<div class="row" id="jumpHeader">
 		
 	</div>
+	<div class="row">
+		<div class="col-12">
+			<h2>Account</h2>
+			<button type="button" class="buttonsubmit btn btn-danger" onclick="disconnect()">Disconnect</button>
+		</div>
+	</div>
+	</div>
+	
+	
+	
 
 </body>
 </html>

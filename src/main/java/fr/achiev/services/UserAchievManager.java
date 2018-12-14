@@ -33,13 +33,29 @@ public class UserAchievManager {
 		return daoInt.findAll(UserAchiev.class);
 
 	}
+	@Path("/isconnected")
+	@GET
+	public Response isConnected() {
+		HttpSession session = httpServletRequest.getSession();
+		UserAchiev res = (UserAchiev) session.getAttribute("UserConnected");
+		
+		if (res == null) {
+			System.out.println("2 :"+res);
+			return Response.status(Response.Status.FORBIDDEN).build();
+		}
+		System.out.println("3 :"+res);
+		return Response.ok().build();
+		
+
+	}
+	
 
 	@Path("/usersession")
 	@GET
-	public UserAchiev getUserAchievById() {
+	public UserAchiev getUserSession() {
 		HttpSession session = httpServletRequest.getSession();
 		UserAchiev res = (UserAchiev) session.getAttribute("UserConnected");
-
+		
 		return res;
 
 	}
@@ -49,7 +65,6 @@ public class UserAchievManager {
 	public Response addUserAchiev(UserAchiev u) {
 		Response res = null;
 		List<String> errs = CheckUser.check(u);
-		System.out.println("test");
 		try {
 
 			if (!errs.isEmpty()) {
@@ -130,25 +145,27 @@ public class UserAchievManager {
 	@DELETE
 	public Response deleteUserAchiev() {
 		HttpSession session = httpServletRequest.getSession();
-		UserAchiev UserAchiev = (UserAchiev) session.getAttribute("UserAchiev");
+		UserAchiev UserAchiev = (UserAchiev) session.getAttribute("UserConnected");
 		List<String> errs = new ArrayList<>();
 
-		session.setAttribute("UserAchiev", null);
+		session.setAttribute("UserConnected", null);
 
 		try {
 			daoInt.delete(UserAchiev);
 		} catch (Exception e) {
-			errs.add("Erreur serveur");
+			errs.add("Servor error");
 			return Response.status(Response.Status.BAD_REQUEST).entity(errs).build();
 		}
 		return Response.ok().build();
 	}
 
-	@Path("/deconnexion")
+	@Path("/disconnect")
 	@POST
 	public void deconnexion() {
 		HttpSession session = httpServletRequest.getSession();
-		session.setAttribute("UserAchiev", null);
+		session.setAttribute("UserConnected", null);
+		System.out.println("Deco");
+		
 	}
 
 }
