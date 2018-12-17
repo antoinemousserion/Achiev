@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 	<!-- include the core styles -->
 <link rel="stylesheet" href="js/alertify.js-0.3.11/themes/alertify.core.css" />
 <!-- include a theme, can be included into the core instead of 2 separate files -->
@@ -29,32 +30,43 @@
 		
 	</nav>
 </header>
-<body id="body">
+<body>
 	<div class="container">
 		<div class="row" id="jumpHeader"></div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h1>Welcome on Achiev'</h1>
-				<br>
-				<br>
-				<div class="row" align="center">
-					<p class="col">Here, you can create events or join existing events. If you have an account you can <a class="lien" href="login.html">log in</a> or <a class="lien" href="signin.html">sign up</a></p>
+				<h2>Achievements list</h2>
+				<div class="row">
+					<input type="text" class="form-control col"  placeholder="Search" >
+                </input>
+                <span id="padd"></span>
+                <button type="submit" class="col-2 btn" onclick="search()">Search</button>
 
 				</div>
-				<div class="row">
-					<div class="col-2"></div>
-					<div class="col-4">
-						<a href="" class="col"><button type="submit" class="btn btn-success col">Create Event</button></a>
-					</div>
-					<div class="padd"></div>
-					<div class="col-4">
-						<a href="achievements.html" class="col"><button type="submit" class="btn btn-success col">View Events</button></a>
-					</div>
-					<div class="col-2"></div>
-				</div>
 				
+                <br>
+               
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Achievement's Name</th>
+      <th class="tdachiev" scope="col">#Players</th>
+      <th class="tdachiev" scope="col">Leader</th>
+      <th class="tdachiev" scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">Une journée de plus en moins en plus en moins en plus de moins en plus</td>
+      <td class="tdachiev">4</td>
+      <td class="tdachiev">Pandinou#2917</td>
+      <td class="tdachiev"><a class="lien" href="#1">Details</a></td>
+    </tr>
+  </tbody>
+</table>
+
 			</div>
 		</div>
 	</div>

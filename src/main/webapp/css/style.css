@@ -7,9 +7,20 @@ header{
 footer{
     background-color: #353535;
 }
+#body{
+    align-content:  center;
+}
+.tdachiev{
+    text-align: center;
+}
 
+#padd{
+    margin-left: 10px;
+}
 
-
+.buttonindex{
+    align-content: center;
+}
 #allyHorde{
     width: 50px;
 }
