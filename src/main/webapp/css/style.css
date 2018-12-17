@@ -1,6 +1,12 @@
 #jumpHeader{
     height: 85px
 }
+#jumpfooter{
+    height: 85px
+}
+#acceptbuttonnewevent{
+    padding: 20px;
+}
 header{
     height: 80px;
 }
