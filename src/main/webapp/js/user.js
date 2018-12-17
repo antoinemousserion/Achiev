@@ -2,6 +2,7 @@ var user = {
     }
 
 
+
 function register(){
     
 
@@ -20,12 +21,14 @@ function register(){
         body: JSON.stringify(user)
     }).then(function f(response){
         if(response.ok){
-            alert("Your account has been created, Welcome "+document.getElementById('username').value);
+            //alert("Your account has been created, Welcome "+document.getElementById('username').value);
+            createSuccess(document.getElementById('username').value);
             return null;
         }
         return response.json();
     }).then(function f(repJson){
         if (repJson != null) {
+            //a rendre bo
             alert(repJson);
         }
     })
@@ -59,14 +62,18 @@ function connection(){
         body: JSON.stringify(user)
     }).then(function f(response){
         if(response.ok){
-            alert("Welcome !");
+            
              document.location.href="index.html";
+             //setTimeout(alertify.success("Welcome !"),1500);
             return null;
         }
         return response.json();
     }).then(function f(repJson){
         if (repJson != null) {
-            alert(repJson);
+            repJson.forEach(function f(truc){
+                alertify.error(truc);
+            });
+            
         }
     })
 }
@@ -93,18 +100,25 @@ function displayUserConnected(){
             'Content-Type': 'application/json'
         }
     }).then(function f(response){
-        console.log("test");
-        if(!response.ok){
-           return response.json();
+        
+        if (response.status == 204) {
+            return null;
         }
-        return null;
+        return response.json();
        
     }).then(function f(resJson){
         if (resJson != null){
-            userCo.innerHTML = "Welcome <a href='account.html'>"+resJson.username +"</a>"
+            userCo.innerHTML = "Welcome <a class='lien' href='account.html'>"+resJson.username +"</a>"
         }else{
-            userCo.innerHTML = "<a href='login.html'>Log In</a>";
+            userCo.innerHTML = "<a class='lien' href='login.html'>Log In</a>";
         }
         
     })
 }
+function createSuccess(username){
+    document.getElementById("createSuccess").innerHTML = "<p>Your account has been successfuly created ! Welcome "+username+"</p><a href='index.html'><button type='button' class='buttonsubmit btn btn-success'>Back to Home page</button></a>";
+
+}
+
+
+document.onload(displayUserConnected());

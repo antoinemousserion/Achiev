@@ -6,8 +6,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="js/user.js"></script>
+    
 </head>
 
 <header class="header fixed-top">
@@ -17,6 +16,9 @@
 			<ul class="navbar-nav mr-auto list-inline">
 				<li class="nav-item list-inline-item"><a class="nav-link" href="index.html">Home</a></li>
 				<li class="nav-item list-inline-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+			</ul>
+			<ul class="navbar-fixed-left">
+				<li id="userConnected" class="nav-item list-inline-item"></li>
 			</ul>
 		
 	</nav>
@@ -29,13 +31,13 @@
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6">
-			<h2>Sign In</h2>
+			<h2>Sign Up</h2>
 		</div>
 		<div class="col-3"></div>
 	</div>
 	<div class="row">
 		<div class="col-2"></div>
-		<div class="col-8">
+		<div id="createSuccess" class="col-8">
 			<form>
 			    <p>Username :</p>
 			    <div class="form-group">
@@ -70,6 +72,8 @@
 	
 
 </body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/user.js"></script>
 <footer class="page-footer font-small fixed-bottom">
   <div class="footer-copyright text-center py-3">Footer de merde</div>
 </footer>

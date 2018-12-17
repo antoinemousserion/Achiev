@@ -87,7 +87,8 @@ public class UserAchievManager {
 			errs.add(e.getMessage());
 			res = Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(errs).build();
 		}
-
+		
+		connexion(u);
 		return res;
 	}
 
